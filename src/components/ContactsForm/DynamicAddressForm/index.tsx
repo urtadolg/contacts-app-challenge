@@ -1,8 +1,10 @@
 import { Label, Button, CustomIcon, InputWithFieldset } from "~/components";
 import { useDynamicForm } from "~/hooks";
+import { addZipCodeMask } from "~/utils/masks";
 import { AddressFormContainer } from "./styles";
+import { DynamicAddressFormProps } from "./types";
 
-const DynamicAddressForm = () => {
+const DynamicAddressForm = ({ errors }: DynamicAddressFormProps) => {
 	const {
 		fields,
 		register,
@@ -13,37 +15,66 @@ const DynamicAddressForm = () => {
 
 	return (
 		<>
-			<Label label="Endereço(s)" />
+			<Label hasError={Boolean(errors)} label="Endereço(s)" />
 			<ul>
 				{fields.map((field, index) => (
 					<AddressFormContainer key={field.id}>
-						<Label label={`#${index + 1}`} />
+						<Label
+							hasError={Boolean(errors && errors[index])}
+							label={`#${index + 1}`}
+						/>
 						<InputWithFieldset
 							legend="CEP"
-							inputProps={{ ...register(`address.${index}.zipCode`) }}
+							inputProps={{
+								placeholder: "12345-678",
+								maxLength: 9,
+								onKeyUp: addZipCodeMask,
+								...register(`address.${index}.zipCode`),
+							}}
+							errorMessage={errors && errors[index]?.zipCode?.message}
 						/>
 						<div className="street-number-container">
 							<InputWithFieldset
 								legend="Rua"
-								inputProps={{ ...register(`address.${index}.street`) }}
+								inputProps={{
+									placeholder: "Nome da Rua",
+									...register(`address.${index}.street`),
+								}}
+								errorMessage={errors && errors[index]?.street?.message}
 							/>
 							<InputWithFieldset
 								legend="Número"
-								inputProps={{ ...register(`address.${index}.number`) }}
+								inputProps={{
+									placeholder: "12",
+									...register(`address.${index}.number`),
+								}}
+								errorMessage={errors && errors[index]?.number?.message}
 							/>
 						</div>
 						<InputWithFieldset
 							legend="Bairro"
-							inputProps={{ ...register(`address.${index}.neighborhood`) }}
+							inputProps={{
+								placeholder: "Nome do Bairro",
+								...register(`address.${index}.neighborhood`),
+							}}
+							errorMessage={errors && errors[index]?.neighborhood?.message}
 						/>
 						<div className="city-state-container">
 							<InputWithFieldset
 								legend="Cidade"
-								inputProps={{ ...register(`address.${index}.city`) }}
+								inputProps={{
+									placeholder: "Nome da Cidade",
+									...register(`address.${index}.city`),
+								}}
+								errorMessage={errors && errors[index]?.city?.message}
 							/>
 							<InputWithFieldset
 								legend="UF"
-								inputProps={{ ...register(`address.${index}.state`) }}
+								inputProps={{
+									placeholder: "SP",
+									...register(`address.${index}.state`),
+								}}
+								errorMessage={errors && errors[index]?.state?.message}
 							/>
 						</div>
 						<Button

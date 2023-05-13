@@ -11,7 +11,7 @@ const colors = {
 	},
 	red: {
 		default: "#DD3030",
-		light: "#d85151",
+		light: "#eeb9b9",
 	},
 	gray: {
 		default: "#D7D7D7",

@@ -1,13 +1,14 @@
 import { Outlet } from "react-router-dom";
+import { ContactsProvider } from "~/store";
 import { AppWrapper } from "./AppLayoutStyles";
 
 const AppLayout = () => {
 	return (
-		<AppWrapper>
-			{/* <p>header</p> */}
-			<Outlet />
-			{/* <p>footer</p> */}
-		</AppWrapper>
+		<ContactsProvider>
+			<AppWrapper>
+				<Outlet />
+			</AppWrapper>
+		</ContactsProvider>
 	);
 };
 

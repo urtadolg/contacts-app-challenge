@@ -12,7 +12,7 @@ export const defaultValues = {
 		{
 			zipCode: "",
 			street: "",
-			number: "",
+			number: undefined,
 			neighborhood: "",
 			city: "",
 			state: "",
@@ -21,17 +21,36 @@ export const defaultValues = {
 };
 
 export const contactsScrema = object().shape({
-	name: string().required().min(10),
-	email: string().required(),
-	phone: array().of(object().shape({ number: number().required() })),
+	name: string()
+		.required("O nome é obrigatório.")
+		.matches(/^[A-Za-z\sç]{3,}$/, { message: "Digite um nome válido." }),
+	email: string()
+		.email("Endereço de email inválido.")
+		.required("O email é obrigatório."),
+	phone: array().of(
+		object().shape({
+			number: string()
+				.matches(
+					/^\([0-9]{2}\) [0-9]{4,5}-[0-9]{4}$/,
+					"Por favor, insira um telefone válido"
+				)
+				.required("O campo telefone é obrigatório."),
+		})
+	),
 	address: array().of(
 		object().shape({
-			zipCode: number().required(),
-			street: string().required(),
-			number: number().required(),
-			neighborhood: string().required(),
-			city: string().required(),
-			state: string().required(),
+			zipCode: string()
+				.matches(/^[0-9]{5}-[0-9]{3}$/, "Por favor, insira um CEP válido.")
+				.required("O CEP é obrigatório."),
+			street: string().required("Digite o nome da Rua."),
+			number: number()
+				.typeError("Digite um número válido.")
+				.required("O Número é obrigatório."),
+			neighborhood: string().required("Digite o nome do Bairro."),
+			city: string().required("Digite o nome da Cidade."),
+			state: string()
+				.matches(/^[^0-9]{2}$/, "UF inválido.")
+				.required("UF é obrigatório."),
 		})
 	),
 });

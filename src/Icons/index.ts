@@ -4,6 +4,7 @@ import {
 	BsPencilSquare,
 	BsSearch,
 	BsX,
+	BsCheck,
 } from "react-icons/bs";
 
 export const icons = {
@@ -12,4 +13,5 @@ export const icons = {
 	Edit: BsPencilSquare,
 	Search: BsSearch,
 	Cancel: BsX,
+	Check: BsCheck,
 };

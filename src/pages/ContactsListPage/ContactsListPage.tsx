@@ -1,20 +1,13 @@
-import styled from "styled-components";
+import { ContactsList, Title } from "~/components";
+import { ContactsListContainer } from "./styles";
 
 const ContactsListPage = () => {
 	return (
 		<ContactsListContainer>
-			<h1>Contatos</h1>
+			<Title>Lista de Contatos</Title>
+			<ContactsList />
 		</ContactsListContainer>
 	);
 };
 
 export default ContactsListPage;
-
-const ContactsListContainer = styled.div`
-	display: flex;
-	flex-direction: column;
-
-	h1 {
-		text-align: center;
-	}
-`;

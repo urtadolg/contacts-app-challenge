@@ -11,3 +11,12 @@ export const InputContainer = styled.div`
 	flex-direction: column;
 	max-width: 100%;
 `;
+
+export const ControllerButtonsContainer = styled.div`
+	display: flex;
+	gap: 5px;
+
+	button {
+		width: 100%;
+	}
+`;

@@ -1,10 +1,3 @@
-export { default as Title } from "./Title";
-export { default as Input } from "./Input";
-export { default as Label } from "./Label";
-export { default as Button } from "./Button";
-export { default as ContactsForm } from "./ContactsForm";
-export { default as InputWithLabel } from "./InputWithLabel";
-export { default as CustomIcon } from "./CustomIcon";
-export { default as Fieldset } from "./Fieldset";
-export { default as Legend } from "./Legend";
-export { default as InputWithFieldset } from "./InputWithFieldset";
+export * from "./ContactsList";
+export * from "./ContactsForm";
+export * from "./shared";

@@ -1,5 +1,5 @@
-import styled from "styled-components";
 import { ContactsForm, Title } from "~/components";
+import { NewContactPageContainer } from "./styles";
 
 const NewContactPage = () => {
 	return (
@@ -11,10 +11,3 @@ const NewContactPage = () => {
 };
 
 export default NewContactPage;
-
-const NewContactPageContainer = styled.div`
-	display: flex;
-	flex-direction: column;
-	gap: 25px;
-	padding: 0 15px;
-`;

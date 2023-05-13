@@ -1,16 +1,25 @@
 {
-  "teste": [
-    {
-      "id": 1,
-      "title": "teste 1"
-    },
-    {
-      "id": 2,
-      "title": "teste 2"
-    },
-    {
-      "id": 3,
-      "title": "teste 3"
-    }
-  ]
+	"contacts": [
+		{
+			"id": 1,
+			"category": "N",
+			"name": "Nome Sobrenome",
+			"email": "nome.sobrenome@gmail.com",
+			"phone": [
+				{
+					"number": "(19) 98746-9654"
+				}
+			],
+			"address": [
+				{
+					"city": "Exemplo Nome Cidade",
+					"neighborhood": "Exemplo Nome Bairro",
+					"number": 20,
+					"state": "SP",
+					"street": "Exemplo Nome Rua",
+					"zipCode": "12345-678"
+				}
+			]
+		}
+	]
 }

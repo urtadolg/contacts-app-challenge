@@ -1,7 +1,7 @@
 import { useFieldArray, useFormContext } from "react-hook-form";
 
 const useDynamicForm = (name: string) => {
-	const { control, register } = useFormContext();
+	const { control, register, formState } = useFormContext();
 
 	const addNewInputField = () => {
 		append({ number: "" });

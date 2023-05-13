@@ -14,12 +14,8 @@ export const AddressFormContainer = styled.li`
 			display: flex;
 			gap: 5px;
 
-			fieldset {
-				width: 100%;
-
-				&:last-child {
-					width: 120px;
-				}
+			div:last-child {
+				width: 150px;
 			}
 		}
 	`}

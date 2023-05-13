@@ -1,8 +1,16 @@
-import { Input, Label, Button, CustomIcon } from "~/components";
+import {
+	InputErrorMessage,
+	Input,
+	Label,
+	Button,
+	CustomIcon,
+} from "~/components";
 import { useDynamicForm } from "~/hooks";
-import { CustomErrorMessage, PhoneInputContainer } from "./styles";
+import { addCellphoneMask } from "~/utils/masks";
+import { PhoneInputContainer } from "./styles";
+import { DynamicPhoneFormProps } from "./types";
 
-const DynamicPhoneForm = () => {
+const DynamicPhoneForm = ({ errors }: DynamicPhoneFormProps) => {
 	const {
 		fields,
 		register,
@@ -13,11 +21,24 @@ const DynamicPhoneForm = () => {
 
 	return (
 		<>
-			<Label label="Telefone(s)" />
+			<Label hasError={Boolean(errors)} label="Telefone(s)" />
 			<ul>
 				{fields.map((field, index) => (
 					<PhoneInputContainer key={field.id}>
-						<Input {...register(`phone.${index}.number`)} />
+						<div>
+							<Input
+								placeholder="(11) 98765-4321"
+								hasError={Boolean(errors && errors[index]?.number?.message)}
+								maxLength={15}
+								onKeyUp={addCellphoneMask}
+								{...register(`phone.${index}.number`)}
+							/>
+							{errors && errors[index]?.number && (
+								<InputErrorMessage>
+									{errors[index]?.number?.message}
+								</InputErrorMessage>
+							)}
+						</div>
 						<Button
 							variant="Danger"
 							disabled={isRemoveFieldButtonDisabled}
@@ -28,7 +49,6 @@ const DynamicPhoneForm = () => {
 					</PhoneInputContainer>
 				))}
 			</ul>
-			<CustomErrorMessage>Digite um telefone válido.</CustomErrorMessage>
 			<Button onClick={addNewInputField}>
 				<CustomIcon name="Plus" size={20} />
 				Adicionar Telefone
