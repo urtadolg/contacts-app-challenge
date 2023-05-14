@@ -1,25 +1,193 @@
 {
-	"contacts": [
-		{
-			"id": 1,
-			"category": "N",
-			"name": "Nome Sobrenome",
-			"email": "nome.sobrenome@gmail.com",
-			"phone": [
-				{
-					"number": "(19) 98746-9654"
-				}
-			],
-			"address": [
-				{
-					"city": "Exemplo Nome Cidade",
-					"neighborhood": "Exemplo Nome Bairro",
-					"number": 20,
-					"state": "SP",
-					"street": "Exemplo Nome Rua",
-					"zipCode": "12345-678"
-				}
-			]
-		}
-	]
+  "contacts": [
+    {
+      "address": [
+        {
+          "state": "SP",
+          "city": "Nome da Cidade",
+          "neighborhood": "Nome do Bairro",
+          "number": 12,
+          "street": "Nome da Rua",
+          "zipCode": "12345-678"
+        }
+      ],
+      "phone": [
+        {
+          "number": "(12) 34599-8798"
+        }
+      ],
+      "email": "leandro.urtado25@gmail.com",
+      "name": "João Vítor",
+      "id": "bf695c09-8e1a-4ec1-8481-a27e1e64c9fa",
+      "category": "J"
+    },
+    {
+      "address": [
+        {
+          "state": "RJ",
+          "city": "Rio de Janeiro",
+          "neighborhood": "Copacabana",
+          "number": 239,
+          "street": "Rua Xavier da Silveira",
+          "zipCode": "22061-010"
+        }
+      ],
+      "phone": [
+        {
+          "number": "(21) 94684-8307"
+        }
+      ],
+      "email": "gabrielamoreira_@hotmail.com",
+      "name": "Ana Júlia",
+      "id": "e968277a-df54-4a1b-bc8c-575f63c63ad9",
+      "category": "A"
+    },
+    {
+      "address": [
+        {
+          "state": "PR",
+          "city": "Curitiba",
+          "neighborhood": "Jardim das Américas",
+          "number": 839,
+          "street": "Rua Doutor Brasílio Vicente de Castro",
+          "zipCode": "81270-040"
+        }
+      ],
+      "phone": [
+        {
+          "number": "(41) 94653-8803"
+        }
+      ],
+      "email": "pedrogomes@outlook.com",
+      "name": "João Lucas",
+      "id": "c6d4d4a7-8c51-4ca7-b47c-9cc9b0cc9884",
+      "category": "J"
+    },
+    {
+      "address": [
+        {
+          "state": "SP",
+          "city": "São Paulo",
+          "neighborhood": "Jardim Paulistano",
+          "number": 294,
+          "street": "Rua Professor Carlos Reis",
+          "zipCode": "01453-010"
+        }
+      ],
+      "phone": [
+        {
+          "number": "(11) 95417-4012"
+        }
+      ],
+      "email": "viniciussouza_@outlook.com",
+      "name": "Luana",
+      "id": "aa34f1e2-2ed8-40b3-92d3-c37c9f3f9023",
+      "category": "L"
+    },
+    {
+      "address": [
+        {
+          "state": "RS",
+          "city": "Porto Alegre",
+          "neighborhood": "Moinhos de Vento",
+          "number": 171,
+          "street": "Rua Florêncio Ygartua",
+          "zipCode": "90430-000"
+        }
+      ],
+      "phone": [
+        {
+          "number": "(51) 98877-5832"
+        }
+      ],
+      "email": "brunoalmeida@outlook.com",
+      "name": "Gabriel",
+      "id": "a3ef10e6-22d6-4172-9bfa-cf24b60f5a15",
+      "category": "G"
+    },
+    {
+      "address": [
+        {
+          "state": "BA",
+          "city": "Salvador",
+          "neighborhood": "Barra",
+          "number": 123,
+          "street": "Av. Oceânica",
+          "zipCode": "40140-130"
+        }
+      ],
+      "phone": [
+        {
+          "number": "(71) 98765-4321"
+        }
+      ],
+      "email": "carlosalmeida@gmail.com",
+      "name": "Ricardo",
+      "id": "412b4f4b-bf25-4d64-b58f-cddbb7ba6b97",
+      "category": "R"
+    },
+    {
+      "address": [
+        {
+          "state": "RJ",
+          "city": "Rio de Janeiro",
+          "neighborhood": "Copacabana",
+          "number": 456,
+          "street": "Rua Francisco Otaviano",
+          "zipCode": "22080-030"
+        }
+      ],
+      "phone": [
+        {
+          "number": "(21) 98765-4321"
+        }
+      ],
+      "email": "andreiaoliveira@yahoo.com",
+      "name": "Fernanda",
+      "id": "3e3cfaee-5c88-4b02-a9d1-0c4471e6b7d2",
+      "category": "F"
+    },
+    {
+      "address": [
+        {
+          "state": "SP",
+          "city": "São Paulo",
+          "neighborhood": "Moema",
+          "number": 789,
+          "street": "Av. Ibirapuera",
+          "zipCode": "04029-000"
+        }
+      ],
+      "phone": [
+        {
+          "number": "(11) 98765-4321"
+        }
+      ],
+      "email": "ricardomelo@hotmail.com",
+      "name": "Ana",
+      "id": "2d293deb-9b1c-4e04-ba21-4640cb69ce13",
+      "category": "A"
+    },
+    {
+      "address": [
+        {
+          "state": "RS",
+          "city": "Porto Alegre",
+          "neighborhood": "Moinhos de Vento",
+          "number": 321,
+          "street": "Rua Padre Chagas",
+          "zipCode": "90570-080"
+        }
+      ],
+      "phone": [
+        {
+          "number": "(51) 98765-4321"
+        }
+      ],
+      "email": "victorflores@gmail.com",
+      "name": "Juliana",
+      "id": "5a5e977a-8f2c-42af-a7e6-1470a52b1fcf",
+      "category": "J"
+    }
+  ]
 }

@@ -1,10 +1,18 @@
 import { Dispatch, SetStateAction } from "react";
-import { ContactFormData, IContactData, SortedContactsList } from "~/types";
+import {
+	Address,
+	ContactFormData,
+	IContactData,
+	SortedContactsList,
+} from "~/types";
 
-export const parseFormData = (data: ContactFormData): IContactData => {
+export const parseFormData = (
+	data: ContactFormData,
+	id: string
+): IContactData => {
 	return {
 		...data,
-		id: Math.random(),
+		id,
 		category: data.name.toUpperCase().charAt(0),
 	};
 };
@@ -20,6 +28,22 @@ export const updateLocalContactsListState = (
 				...(state[`${newContact.category}`] || []),
 				newContact,
 			],
+		};
+	});
+};
+
+export const updateLocalContactDetailsState = (
+	updatedContact: IContactData,
+	setContactsList: Dispatch<SetStateAction<SortedContactsList>>
+) => {
+	setContactsList((state) => {
+		const filteredCategoryList = state[`${updatedContact.category}`].filter(
+			(item) => item.id === updatedContact.id
+		);
+
+		return {
+			...state,
+			[`${updatedContact.category}`]: [...filteredCategoryList, updatedContact],
 		};
 	});
 };
@@ -48,4 +72,8 @@ export const getCategoriesList = (obj: SortedContactsList) => {
 	}
 
 	return categoriesList.sort();
+};
+
+export const formatAddressText = (address: Address) => {
+	return `${address.street}, ${address.number} - ${address.neighborhood} - ${address.city} / ${address.state}`;
 };

@@ -1,4 +1,4 @@
-import { Label, Button, CustomIcon, InputWithFieldset } from "~/components";
+import { Label, Button, InputWithFieldset } from "~/components";
 import { useDynamicForm } from "~/hooks";
 import { addZipCodeMask } from "~/utils/masks";
 import { AddressFormContainer } from "./styles";
@@ -81,15 +81,14 @@ const DynamicAddressForm = ({ errors }: DynamicAddressFormProps) => {
 							variant="Danger"
 							disabled={isRemoveFieldButtonDisabled}
 							onClick={removeInputField.bind(this, index)}
+							icon="Trash"
 						>
-							<CustomIcon name="Trash" size={20} />
 							Excluir Endereço
 						</Button>
 					</AddressFormContainer>
 				))}
 			</ul>
-			<Button onClick={addNewInputField}>
-				<CustomIcon name="Plus" size={20} />
+			<Button onClick={addNewInputField} icon="Plus">
 				Adicionar Endereço
 			</Button>
 		</>

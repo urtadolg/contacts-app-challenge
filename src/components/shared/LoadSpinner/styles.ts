@@ -12,9 +12,10 @@ const spinAnimation = keyframes`
 `;
 
 export const CustomSpinner = styled.div<CustomSpinnerProps>`
-	${({ theme, $size }) => css`
-		border: transparent solid 5px;
-		border-color: transparent ${theme.colors.blue.default};
+	${({ theme, $size, $dark }) => css`
+		border: transparent solid ${$size < 30 ? "2px" : "5px"};
+		border-color: transparent
+			${$dark ? theme.colors.white : theme.colors.blue.default};
 		border-radius: 50%;
 		width: ${$size}px;
 		height: ${$size}px;

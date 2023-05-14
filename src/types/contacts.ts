@@ -1,4 +1,4 @@
-type Address = {
+export type Address = {
 	city: string;
 	neighborhood: string;
 	number: number;
@@ -7,7 +7,7 @@ type Address = {
 	zipCode: string;
 };
 
-type Phone = {
+export type Phone = {
 	number: string;
 };
 
@@ -19,7 +19,7 @@ export interface ContactFormData {
 }
 
 export interface IContactData extends ContactFormData {
-	id: number;
+	id: string;
 	category: string;
 }
 

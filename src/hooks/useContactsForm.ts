@@ -8,7 +8,8 @@ import { ContactsContext } from "~/store";
 
 const useContactsForm = (defaultValue?: IContactData) => {
 	const navigate = useNavigate();
-	const { saveNewContact, isLoading } = useContext(ContactsContext);
+	const { saveNewContact, updateContact, isLoading } =
+		useContext(ContactsContext);
 
 	const resolver = yupResolver(contactsScrema);
 
@@ -20,10 +21,14 @@ const useContactsForm = (defaultValue?: IContactData) => {
 
 	const onSubmit = async (contactData: ContactFormData) => {
 		if (isLoading) return;
+		if (defaultValue) {
+			updateContact(contactData, defaultValue.id);
+			return;
+		}
 		await saveNewContact(contactData);
 	};
 
-	const onCancel = () => navigate("/contacts");
+	const onCancel = () => navigate("/contacts", { replace: true });
 
 	return {
 		methods,

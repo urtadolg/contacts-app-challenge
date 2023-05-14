@@ -23,7 +23,9 @@ export const defaultValues = {
 export const contactsScrema = object().shape({
 	name: string()
 		.required("O nome é obrigatório.")
-		.matches(/^[A-Za-z\sç]{3,}$/, { message: "Digite um nome válido." }),
+		.matches(/^[A-Za-z\s\u00c0-\u00ffçÇ]{3,}$/, {
+			message: "Digite um nome válido.",
+		}),
 	email: string()
 		.email("Endereço de email inválido.")
 		.required("O email é obrigatório."),

@@ -5,6 +5,7 @@ import {
 	BsSearch,
 	BsX,
 	BsCheck,
+	BsChevronLeft,
 } from "react-icons/bs";
 
 export const icons = {
@@ -14,4 +15,5 @@ export const icons = {
 	Search: BsSearch,
 	Cancel: BsX,
 	Check: BsCheck,
+	Back: BsChevronLeft,
 };

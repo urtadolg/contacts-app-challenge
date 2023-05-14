@@ -1,6 +1,8 @@
-import styled from "styled-components";
-import { Button, CustomIcon, LoadSpinner } from "~/components";
+import { Button, LoadSpinner } from "~/components";
 import { useContactsList } from "~/hooks";
+import CategoryList from "./CategoryList";
+import SearchBar from "./SearchBar";
+import { ContactsListPageContainer } from "./styles";
 
 const ContactsList = () => {
 	const {
@@ -12,46 +14,23 @@ const ContactsList = () => {
 	} = useContactsList();
 
 	return (
-		<>
-			<Button onClick={() => navigate("./new")}>
-				<CustomIcon name="Plus" />
+		<ContactsListPageContainer>
+			<SearchBar />
+			<Button onClick={() => navigate("./new")} icon="Plus">
 				Novo Contato
 			</Button>
 			{isLoading || !contactsList ? (
 				<LoadSpinner />
 			) : (
-				<ContactsListContainer>
-					{categoriesList.map((category) => {
-						return (
-							<li key={category}>
-								<p>{category}</p>
-								<ul>
-									{contactsList[`${category}`].map((contact) => {
-										return (
-											<li
-												key={contact.id}
-												onClick={handleContactSelect}
-												className="item-container"
-											>
-												<p>{contact.name}</p>
-											</li>
-										);
-									})}
-								</ul>
-							</li>
-						);
-					})}
-				</ContactsListContainer>
+				<CategoryList
+					categoriesList={categoriesList}
+					contactsList={contactsList}
+					handleContactSelect={handleContactSelect}
+				/>
 			)}
-		</>
+			{categoriesList.length === 0 && !isLoading && <h1>Lista vazia...</h1>}
+		</ContactsListPageContainer>
 	);
 };
 
 export default ContactsList;
-
-const ContactsListContainer = styled.ul`
-	height: 100%;
-	width: 100%;
-	overflow: auto;
-	margin-top: 30px;
-`;

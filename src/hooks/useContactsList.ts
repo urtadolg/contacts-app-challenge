@@ -15,13 +15,11 @@ const useContactsList = () => {
 	}, [contactsList]);
 
 	useEffect(() => {
-		if (categoriesList.length === 0) {
-			getContactsList();
-		}
-	}, [categoriesList, getContactsList]);
+		getContactsList();
+	}, []);
 
-	const handleContactSelect = () => {
-		navigate("/contacts/edit/1");
+	const handleContactSelect = (contactId: string) => {
+		navigate(`/contacts/${contactId}`);
 	};
 
 	return {

@@ -2,7 +2,6 @@ import { InputContainer, Form, ControllerButtonsContainer } from "./styles";
 import {
 	Button,
 	InputWithLabel,
-	CustomIcon,
 	DynamicPhoneForm,
 	DynamicAddressForm,
 } from "~/components";
@@ -50,17 +49,17 @@ const ContactsForm = ({ defaultValue }: ContactsFormProps) => {
 					<DynamicAddressForm errors={errors.address as AddressErrorsType} />
 				</InputContainer>
 				<ControllerButtonsContainer>
-					<Button onClick={onCancel} variant="Danger">
-						<CustomIcon name="Cancel" />
+					<Button onClick={onCancel} variant="Danger" icon="Cancel">
 						Cancelar
 					</Button>
 					<Button
 						disabled={!methods.formState.isValid}
+						isLoading={isLoading}
 						variant="Success"
 						type="submit"
+						icon="Check"
 					>
-						{isLoading ? <p>Loading...</p> : <CustomIcon name="Check" />}
-						Salvar
+						{defaultValue ? "Salvar Edição" : "Salvar"}
 					</Button>
 				</ControllerButtonsContainer>
 			</Form>

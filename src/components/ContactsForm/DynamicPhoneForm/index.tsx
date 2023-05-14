@@ -1,10 +1,4 @@
-import {
-	InputErrorMessage,
-	Input,
-	Label,
-	Button,
-	CustomIcon,
-} from "~/components";
+import { InputErrorMessage, Input, Label, Button } from "~/components";
 import { useDynamicForm } from "~/hooks";
 import { addCellphoneMask } from "~/utils/masks";
 import { PhoneInputContainer } from "./styles";
@@ -43,14 +37,12 @@ const DynamicPhoneForm = ({ errors }: DynamicPhoneFormProps) => {
 							variant="Danger"
 							disabled={isRemoveFieldButtonDisabled}
 							onClick={removeInputField.bind(this, index)}
-						>
-							<CustomIcon name="Trash" size={20} />
-						</Button>
+							icon="Trash"
+						></Button>
 					</PhoneInputContainer>
 				))}
 			</ul>
-			<Button onClick={addNewInputField}>
-				<CustomIcon name="Plus" size={20} />
+			<Button onClick={addNewInputField} icon="Plus">
 				Adicionar Telefone
 			</Button>
 		</>
