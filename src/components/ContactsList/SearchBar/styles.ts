@@ -5,6 +5,8 @@ export const SearchBarWrapper = styled.div`
 	${({ theme }) => css`
 		position: relative;
 		width: 100%;
+		display: flex;
+		justify-content: center;
 	`}
 `;
 
@@ -27,6 +29,15 @@ export const SearchBarContainer = styled.div<SearchBarContainerParams>`
 		input {
 			padding: 0px;
 			border: none;
+		}
+
+		@media ${theme.device.tablet} {
+			background-color: ${theme.colors.white};
+		}
+
+		@media ${theme.device.desktop} {
+			width: 50%;
+			align-self: center;
 		}
 	`}
 `;
@@ -59,6 +70,11 @@ export const SearchSuggestionsContainer = styled.div`
 				&:last-child {
 				}
 			}
+		}
+
+		@media ${theme.device.desktop} {
+			width: 50%;
+			margin: 0px auto;
 		}
 	`}
 `;

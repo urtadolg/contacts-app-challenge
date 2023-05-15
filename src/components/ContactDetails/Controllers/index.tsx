@@ -12,7 +12,7 @@ const Controllers = ({
 			<Button icon="Back" variant="Success" onClick={onBackClickHandler}>
 				Voltar
 			</Button>
-			<Button icon="Edit" onClick={onEditClickHandler}>
+			<Button className="edit-btn" icon="Edit" onClick={onEditClickHandler}>
 				Editar
 			</Button>
 			<Button icon="Trash" variant="Danger" onClick={onDeleteClickHandler}>

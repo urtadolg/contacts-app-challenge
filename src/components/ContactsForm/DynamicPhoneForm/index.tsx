@@ -38,11 +38,13 @@ const DynamicPhoneForm = ({ errors }: DynamicPhoneFormProps) => {
 							disabled={isRemoveFieldButtonDisabled}
 							onClick={removeInputField.bind(this, index)}
 							icon="Trash"
-						></Button>
+						>
+							<p>Excluir Telefone</p>
+						</Button>
 					</PhoneInputContainer>
 				))}
 			</ul>
-			<Button onClick={addNewInputField} icon="Plus">
+			<Button className="add-phone-btn" onClick={addNewInputField} icon="Plus">
 				Adicionar Telefone
 			</Button>
 		</>

@@ -4,6 +4,7 @@ import {
 	InputWithLabel,
 	DynamicPhoneForm,
 	DynamicAddressForm,
+	Title,
 } from "~/components";
 import { useContactsForm } from "~/hooks";
 import { FormProvider } from "react-hook-form";
@@ -19,6 +20,7 @@ const ContactsForm = ({ defaultValue }: ContactsFormProps) => {
 
 	return (
 		<FormProvider {...methods}>
+			<Title>{defaultValue ? "Editar contato" : "Criar novo contato"}</Title>
 			<Form onSubmit={methods.handleSubmit(onSubmit)}>
 				<InputContainer>
 					<InputWithLabel

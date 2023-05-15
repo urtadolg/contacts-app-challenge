@@ -1,15 +1,26 @@
 import styled, { css } from "styled-components";
 
 export const PhoneInputContainer = styled.li`
-	display: flex;
-	gap: 10px;
-	margin-bottom: 10px;
+	${({ theme }) => css`
+		display: flex;
+		gap: 10px;
+		margin-bottom: 10px;
 
-	div {
-		width: 100%;
-	}
+		div {
+			width: 100%;
+		}
 
-	button {
-		height: 42px;
-	}
+		button {
+			height: 42px;
+
+			p {
+				display: none;
+				white-space: nowrap;
+
+				@media ${theme.device.laptop} {
+					display: block;
+				}
+			}
+		}
+	`}
 `;

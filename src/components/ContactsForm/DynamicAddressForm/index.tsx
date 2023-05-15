@@ -82,13 +82,18 @@ const DynamicAddressForm = ({ errors }: DynamicAddressFormProps) => {
 							disabled={isRemoveFieldButtonDisabled}
 							onClick={removeInputField.bind(this, index)}
 							icon="Trash"
+							className="remove-address-btn"
 						>
 							Excluir Endereço
 						</Button>
 					</AddressFormContainer>
 				))}
 			</ul>
-			<Button onClick={addNewInputField} icon="Plus">
+			<Button
+				className="add-address-btn"
+				onClick={addNewInputField}
+				icon="Plus"
+			>
 				Adicionar Endereço
 			</Button>
 		</>

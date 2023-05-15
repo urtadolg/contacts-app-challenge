@@ -2,7 +2,7 @@ import styled, { css } from "styled-components";
 
 export const ContactDetailsContainer = styled.div`
 	${({ theme }) => css`
-		padding: 30px 0px;
+		width: 100%;
 		display: flex;
 		flex-direction: column;
 		justify-content: center;

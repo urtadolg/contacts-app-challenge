@@ -1,8 +1,8 @@
-import { Button, LoadSpinner, Text } from "~/components";
+import { Button, LoadSpinner, Text, Title } from "~/components";
 import { useContactsList } from "~/hooks";
 import CategoryList from "./CategoryList";
 import SearchBar from "./SearchBar";
-import { ContactsListPageContainer } from "./styles";
+import { ListContainer } from "./styles";
 
 const ContactsList = () => {
 	const {
@@ -14,9 +14,14 @@ const ContactsList = () => {
 	} = useContactsList();
 
 	return (
-		<ContactsListPageContainer>
+		<ListContainer>
+			<Title>Lista de Contatos</Title>
 			<SearchBar contactsList={contactsList} />
-			<Button onClick={() => navigate("./new")} icon="Plus">
+			<Button
+				className="add-contact-btn"
+				onClick={() => navigate("./new")}
+				icon="Plus"
+			>
 				Novo Contato
 			</Button>
 			{isLoading || !contactsList ? (
@@ -32,7 +37,7 @@ const ContactsList = () => {
 			) : (
 				<Text>Nenhum contato encontrado :(</Text>
 			)}
-		</ContactsListPageContainer>
+		</ListContainer>
 	);
 };
 

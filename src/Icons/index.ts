@@ -6,6 +6,7 @@ import {
 	BsX,
 	BsCheck,
 	BsChevronLeft,
+	BsEye,
 } from "react-icons/bs";
 
 export const icons = {
@@ -16,4 +17,5 @@ export const icons = {
 	Cancel: BsX,
 	Check: BsCheck,
 	Back: BsChevronLeft,
+	View: BsEye,
 };

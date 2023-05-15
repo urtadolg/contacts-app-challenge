@@ -1,34 +1,34 @@
 import styled, { css } from "styled-components";
 
 export const ContactsListContainer = styled.ul`
-	height: 100%;
-	width: 100%;
-	overflow: auto;
+	${({ theme }) => css`
+		flex: 1 0 200px;
+		width: 100%;
+		overflow: auto;
+		scrollbar-color: ${theme.colors.blue.default} ${theme.colors.gray.default};
+		scrollbar-width: thin;
+
+		&::-webkit-scrollbar-thumb {
+			background-color: ${theme.colors.blue.default};
+			border-radius: 20px;
+		}
+
+		&::-webkit-scrollbar {
+			width: 10px;
+			height: 12px;
+		}
+
+		&::-webkit-scrollbar-track {
+			background-color: ${theme.colors.gray.default};
+			border-radius: 20px;
+		}
+	`}
 `;
 
 export const CategoryListItemContainer = styled.li`
 	${({ theme }) => css`
-		.item-container {
-			padding: 13px 33px;
-			border: solid 1px ${theme.colors.gray.default};
-			border-bottom-color: transparent;
-			cursor: pointer;
-
-			&:last-child {
-				border-bottom-color: ${theme.colors.gray.default};
-			}
-
-			&:hover {
-				background-color: ${theme.colors.gray.light};
-			}
-		}
-
-		h3 {
-			padding: 6px 23px;
-		}
-
 		&:first-child {
-			h3 {
+			.category-title {
 				border-radius: 6px 6px 0 0;
 			}
 		}
@@ -49,5 +49,11 @@ export const CategoryTitle = styled.h3`
 		font-weight: 500;
 		color: ${theme.colors.gray.dark};
 		background-color: ${theme.colors.gray.default};
+		padding: 6px 23px;
+
+		@media ${theme.device.desktop} {
+			padding: 10px 35px;
+			font-size: 1.9rem;
+		}
 	`}
 `;

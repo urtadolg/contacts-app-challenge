@@ -22,6 +22,7 @@ declare module "styled-components" {
 				light: string;
 				dark: string;
 				700: string;
+				shadow: string;
 			};
 		};
 		buttonColors: {
@@ -47,6 +48,11 @@ declare module "styled-components" {
 			md: string;
 			lg: string;
 			xl: string;
+		};
+		device: {
+			tablet: string;
+			laptop: string;
+			desktop: string;
 		};
 	}
 }

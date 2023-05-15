@@ -1,5 +1,5 @@
 import { useLocation } from "react-router-dom";
-import { ContactsForm, Title } from "~/components";
+import { ContactsForm } from "~/components";
 import { IContactData } from "~/types";
 
 const ContactEditPage = () => {
@@ -7,12 +7,7 @@ const ContactEditPage = () => {
 		contactDetails: IContactData;
 	};
 
-	return (
-		<div style={{ padding: "50px 15px" }}>
-			<Title>Editar contato</Title>
-			<ContactsForm defaultValue={contactDetails} />
-		</div>
-	);
+	return <ContactsForm defaultValue={contactDetails} />;
 };
 
 export default ContactEditPage;

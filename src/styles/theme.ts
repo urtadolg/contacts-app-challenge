@@ -18,6 +18,7 @@ const colors = {
 		light: "#F5F5F5",
 		dark: "#7E7E7E",
 		700: "#303030",
+		shadow: "#30303021",
 	},
 };
 
@@ -41,12 +42,17 @@ const buttonColors = {
 };
 
 const breakpoints = {
-	sm: "375px",
 	md: "576px",
 	lg: "768px",
 	xl: "1366px",
 };
 
-const theme = { colors, buttonColors, breakpoints };
+export const device = {
+	tablet: `(min-width: ${breakpoints.md})`,
+	laptop: `(min-width: ${breakpoints.lg})`,
+	desktop: `(min-width: ${breakpoints.xl})`,
+};
+
+const theme = { colors, buttonColors, breakpoints, device };
 
 export default theme;

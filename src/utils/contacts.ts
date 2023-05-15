@@ -3,6 +3,7 @@ import {
 	Address,
 	ContactFormData,
 	IContactData,
+	Phone,
 	SortedContactsList,
 } from "~/types";
 
@@ -76,4 +77,20 @@ export const getCategoriesList = (obj: SortedContactsList) => {
 
 export const formatAddressText = (address: Address) => {
 	return `${address.street}, ${address.number} - ${address.neighborhood} - ${address.city} / ${address.state}`;
+};
+
+export const phonesToDisplay = (phoneNumbersList: Phone[]) => {
+	if (phoneNumbersList.length <= 2) return phoneNumbersList;
+	return [
+		phoneNumbersList[0],
+		{ number: `+ ${phoneNumbersList.length - 1} telefone(s)...` },
+	];
+};
+
+export const addressToDisplay = (addressList: Address[]) => {
+	if (addressList.length <= 2) return addressList;
+	return [
+		addressList[0],
+		{ city: `+ ${addressList.length - 1} endereços(s)...` },
+	];
 };

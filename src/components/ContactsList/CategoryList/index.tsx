@@ -1,4 +1,4 @@
-import { Text } from "~/components";
+import ContactsDataList from "../ContactsDataList";
 import {
 	CategoryListItemContainer,
 	CategoryTitle,
@@ -16,20 +16,12 @@ const CategoryList = ({
 			{categoriesList.map((category) => {
 				return (
 					<CategoryListItemContainer key={category}>
-						<CategoryTitle>{category}</CategoryTitle>
-						<ul>
-							{contactsList[`${category}`].map((contact) => {
-								return (
-									<li
-										key={contact.id}
-										onClick={handleContactSelect.bind(this, contact.id)}
-										className="item-container"
-									>
-										<Text>{contact.name}</Text>
-									</li>
-								);
-							})}
-						</ul>
+						<CategoryTitle className="category-title">{category}</CategoryTitle>
+						<ContactsDataList
+							category={category}
+							contactsList={contactsList}
+							handleContactSelect={handleContactSelect}
+						/>
 					</CategoryListItemContainer>
 				);
 			})}

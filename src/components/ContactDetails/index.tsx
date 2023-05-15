@@ -1,6 +1,6 @@
-import { LoadSpinner, ConfirmModal } from "~/components";
+import { LoadSpinner, ConfirmModal, Title } from "~/components";
 import { ContactDetailsContainer } from "./styles";
-import useContactDetailsPage from "~/hooks/useContactsDetails";
+import { useContactsDetails } from "~/hooks";
 import Controllers from "./Controllers";
 import Details from "./Details";
 
@@ -14,10 +14,11 @@ const ContactDetails = () => {
 		onCancelDeleteHandler,
 		onBackClickHandler,
 		isConfirmModalOpened,
-	} = useContactDetailsPage();
+	} = useContactsDetails();
 
 	return (
 		<ContactDetailsContainer>
+			<Title>Detalhes do Contato</Title>
 			<Controllers
 				onEditClickHandler={onEditClickHandler}
 				onDeleteClickHandler={onDeleteClickHandler}

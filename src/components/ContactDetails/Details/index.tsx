@@ -1,8 +1,8 @@
 import { Text } from "~/components";
 import { formatAddressText } from "~/utils";
 import {
+	DataContainer,
 	DetailsContainer,
-	ListContainer,
 	ListItem,
 	SectionContainer,
 	SectionTitle,
@@ -14,31 +14,35 @@ const Details = ({ contactDetails }: DetailsProps) => {
 		<DetailsContainer>
 			<SectionContainer>
 				<SectionTitle>Nome Completo</SectionTitle>
-				<Text>{contactDetails.name}</Text>
+				<DataContainer>
+					<Text>{contactDetails.name}</Text>
+				</DataContainer>
 			</SectionContainer>
 			<SectionContainer>
 				<SectionTitle>E-mail</SectionTitle>
-				<Text>{contactDetails.email}</Text>
+				<DataContainer>
+					<Text>{contactDetails.email}</Text>
+				</DataContainer>
 			</SectionContainer>
 			<SectionContainer>
 				<SectionTitle>Telefone(s)</SectionTitle>
-				<ListContainer>
+				<ul>
 					{contactDetails.phone.map((item, index) => (
 						<ListItem key={`${item.number}-${index}`}>
 							<Text>{item.number}</Text>
 						</ListItem>
 					))}
-				</ListContainer>
+				</ul>
 			</SectionContainer>
 			<SectionContainer>
 				<SectionTitle>Endereço(s)</SectionTitle>
-				<ListContainer>
+				<ul>
 					{contactDetails.address.map((item, index) => (
 						<ListItem key={`${item.number}-${index}`}>
 							<Text>{formatAddressText(item)}</Text>
 						</ListItem>
 					))}
-				</ListContainer>
+				</ul>
 			</SectionContainer>
 		</DetailsContainer>
 	);

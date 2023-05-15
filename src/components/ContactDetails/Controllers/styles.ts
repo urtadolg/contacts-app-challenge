@@ -9,6 +9,14 @@ export const ControllersContainer = styled.div`
 
 		button {
 			width: 100%;
+
+			@media ${theme.device.laptop} {
+				width: 120px;
+			}
+		}
+
+		.edit-btn {
+			margin-left: auto;
 		}
 	`}
 `;
