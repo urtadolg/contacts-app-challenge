@@ -1,4 +1,4 @@
-import { Button, LoadSpinner } from "~/components";
+import { Button, LoadSpinner, Text } from "~/components";
 import { useContactsList } from "~/hooks";
 import CategoryList from "./CategoryList";
 import SearchBar from "./SearchBar";
@@ -15,20 +15,23 @@ const ContactsList = () => {
 
 	return (
 		<ContactsListPageContainer>
-			<SearchBar />
+			<SearchBar contactsList={contactsList} />
 			<Button onClick={() => navigate("./new")} icon="Plus">
 				Novo Contato
 			</Button>
 			{isLoading || !contactsList ? (
 				<LoadSpinner />
-			) : (
+			) : categoriesList.length === 0 ? (
+				<Text>Nenhum contato encontrado :(</Text>
+			) : Object.values(contactsList)[0]?.length > 0 ? (
 				<CategoryList
 					categoriesList={categoriesList}
 					contactsList={contactsList}
 					handleContactSelect={handleContactSelect}
 				/>
+			) : (
+				<Text>Nenhum contato encontrado :(</Text>
 			)}
-			{categoriesList.length === 0 && !isLoading && <h1>Lista vazia...</h1>}
 		</ContactsListPageContainer>
 	);
 };
