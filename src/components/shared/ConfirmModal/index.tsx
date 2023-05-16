@@ -1,7 +1,11 @@
 import Modal from "react-modal";
 import { ModalProps } from "./types";
 import { Button, Text } from "~/components";
-import { ModalControllersContainer, ModalTitle } from "./styles";
+import {
+	ModalControllersContainer,
+	ModalTitle,
+	ContentContainer,
+} from "./styles";
 
 const ConfirmModal = ({
 	title,
@@ -28,12 +32,14 @@ const ConfirmModal = ({
 					display: "flex",
 					flexDirection: "column",
 					gap: "20px",
-					maxWidth: "500px",
+					maxWidth: "400px",
 				},
 			}}
 		>
 			<ModalTitle>{title}</ModalTitle>
-			<Text>{description}</Text>
+			<ContentContainer>
+				<Text>{description}</Text>
+			</ContentContainer>
 			<ModalControllersContainer>
 				<Button icon="Cancel" variant="Danger" onClick={onCancelHandler}>
 					Cancelar

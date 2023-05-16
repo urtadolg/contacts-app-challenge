@@ -6,7 +6,7 @@ export const CustomFieldset = styled.fieldset<{ $hasError: boolean }>`
 		border-width: 1px;
 		border-color: ${$hasError
 			? theme.colors.red.default
-			: theme.colors.gray.dark};
+			: theme.colors.gray.default};
 		background-color: ${$hasError
 			? theme.colors.red.light
 			: theme.colors.white};
@@ -15,12 +15,7 @@ export const CustomFieldset = styled.fieldset<{ $hasError: boolean }>`
 			border-color: ${$hasError
 				? theme.colors.red.default
 				: theme.colors.black};
-		}
-
-		input {
-			border-color: transparent !important;
-			padding: 5px 20px 10px 20px;
-			width: 100%;
+			box-shadow: 0 0 5px 1px ${theme.colors.gray.shadow};
 		}
 	`}
 `;

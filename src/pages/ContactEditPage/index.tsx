@@ -7,7 +7,7 @@ const ContactEditPage = () => {
 		contactDetails: IContactData;
 	};
 
-	return <ContactsForm defaultValue={contactDetails} />;
+	return <ContactsForm initialValue={contactDetails} />;
 };
 
 export default ContactEditPage;

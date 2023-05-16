@@ -14,7 +14,7 @@ const InputWithFieldset = ({
 		<InputWithFieldsetContainer>
 			<Fieldset hasError={hasError}>
 				<Legend hasError={hasError}>{legend}</Legend>
-				<Input hasError={hasError} {...inputProps} />
+				<Input id="input" hasError={hasError} {...inputProps} />
 				{children}
 			</Fieldset>
 			{errorMessage && <InputErrorMessage>{errorMessage}</InputErrorMessage>}

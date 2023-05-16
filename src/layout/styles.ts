@@ -31,6 +31,7 @@ export const AppContainer = styled.div`
 		max-width: 750px;
 		flex: 1;
 		border-radius: 10px;
+		position: relative;
 
 		@media ${theme.device.laptop} {
 			background-color: ${theme.colors.gray.light};
@@ -39,12 +40,8 @@ export const AppContainer = styled.div`
 		}
 
 		@media ${theme.device.desktop} {
-			padding: 80px 80px 40px;
+			padding: 60px 80px 40px;
 			max-width: 1200px;
 		}
 	`}
-`;
-
-export const Logo = styled.img`
-	width: 80px;
 `;

@@ -23,12 +23,16 @@ export const SearchBarContainer = styled.div<SearchBarContainerParams>`
 
 		&:hover,
 		&:focus-within {
-			box-shadow: 0 0 5px 1px #7e7e7e44;
+			box-shadow: 0 0 5px 1px ${theme.colors.gray.shadow};
 		}
 
 		input {
 			padding: 0px;
 			border: none;
+
+			&:focus-within {
+				box-shadow: none;
+			}
 		}
 
 		@media ${theme.device.tablet} {
@@ -65,9 +69,6 @@ export const SearchSuggestionsContainer = styled.div`
 
 				&:hover {
 					background-color: ${theme.colors.gray.default};
-				}
-
-				&:last-child {
 				}
 			}
 		}

@@ -1,16 +1,3 @@
-export type Address = {
-	city: string;
-	neighborhood: string;
-	number: number;
-	state: string;
-	street: string;
-	zipCode: string;
-};
-
-export type Phone = {
-	number: string;
-};
-
 export interface ContactFormData {
 	name: string;
 	email: string;
@@ -24,3 +11,16 @@ export interface IContactData extends ContactFormData {
 }
 
 export type SortedContactsList = Record<string, IContactData[]>;
+
+export type Address = {
+	city: string;
+	neighborhood: string;
+	number: number;
+	state: string;
+	street: string;
+	zipCode: string;
+};
+
+export type Phone = {
+	number: string;
+};

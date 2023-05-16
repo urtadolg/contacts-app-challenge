@@ -2,7 +2,7 @@ import styled, { css } from "styled-components";
 
 export const StyledInput = styled.input<{ $hasError: boolean }>`
 	${({ theme, $hasError }) => css`
-		border: ${$hasError ? theme.colors.red.default : theme.colors.gray.dark}
+		border: ${$hasError ? theme.colors.red.default : theme.colors.gray.default}
 			solid 1px;
 		border-radius: 5px;
 		font-size: 1rem;
@@ -18,6 +18,7 @@ export const StyledInput = styled.input<{ $hasError: boolean }>`
 			border-color: ${$hasError
 				? theme.colors.red.default
 				: theme.colors.black};
+			box-shadow: 0 0 5px 1px ${theme.colors.gray.shadow};
 		}
 	`}
 `;

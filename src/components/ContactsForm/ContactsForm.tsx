@@ -12,15 +12,15 @@ import { PhoneErrorsType } from "./DynamicPhoneForm/types";
 import { AddressErrorsType } from "./DynamicAddressForm/types";
 import { ContactsFormProps } from "./types";
 
-const ContactsForm = ({ defaultValue }: ContactsFormProps) => {
+const ContactsForm = ({ initialValue }: ContactsFormProps) => {
 	const { methods, onSubmit, onCancel, isLoading } =
-		useContactsForm(defaultValue);
+		useContactsForm(initialValue);
 
 	const { errors } = methods.formState;
 
 	return (
 		<FormProvider {...methods}>
-			<Title>{defaultValue ? "Editar contato" : "Criar novo contato"}</Title>
+			<Title>{initialValue ? "Editar contato" : "Criar novo contato"}</Title>
 			<Form onSubmit={methods.handleSubmit(onSubmit)}>
 				<InputContainer>
 					<InputWithLabel
@@ -61,7 +61,7 @@ const ContactsForm = ({ defaultValue }: ContactsFormProps) => {
 						type="submit"
 						icon="Check"
 					>
-						{defaultValue ? "Salvar Edição" : "Salvar"}
+						{initialValue ? "Salvar Edição" : "Salvar"}
 					</Button>
 				</ControllerButtonsContainer>
 			</Form>
