@@ -66,6 +66,7 @@ As seguintes tecnologias foram usadas na construção do projeto:
 - <a href="https://github.com/fkhadra/react-toastify#readme">React-toastify</a>
 - <a href="https://github.com/reactjs/react-modal">React-modal</a>
 - <a href="https://github.com/typicode/json-server">Json-server</a>
+- <a href="https://axios-http.com/">Axios</a>
 
 ---
 
@@ -77,8 +78,6 @@ As seguintes tecnologias foram usadas na construção do projeto:
  - [x] Possibilidade de  registrar muitos endereços e telefones por contato;
  - [x] Feedbacks para o usuário  em ações realizadas, inclusive caso haja   erros no preenchimento;
  - [x] Responsividade  (agenda cabível tanto a desktop quanto a mobile).
- 
- ---
 
 [yarn]: https://yarnpkg.com/
 [npm]: https://www.npmjs.com/
